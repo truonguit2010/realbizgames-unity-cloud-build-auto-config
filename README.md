@@ -13,7 +13,12 @@
 
 ## 3. Configuration via an json file
 
+To use this tool, you must naming your file [realbizgames.json](https://github.com/truonguit2010/realbizgames-unity-cloud-build-auto-config/blob/main/Samples%7E/realbizgames.json) 
+
+The content of the file is below:
+
 `
+
 {
     "versionName": "1.1",
 
@@ -41,5 +46,6 @@
     "Android_keyaliasName": "your_keystore_alias",
     "Android_keyaliasPass": "your_keystore_alias_pass"
 }
+
 `
 
