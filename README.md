@@ -47,7 +47,7 @@ The content of the file is below:
 }
 ```
 
-More infomation about, Please see it at [ironsource](https://developers.ironsrc.com/ironsource-mobile/general/ios-14-network-support/)
+More infomation about SKAdNetworkIdentifier, Please see it at [ironsource](https://developers.ironsrc.com/ironsource-mobile/general/ios-14-network-support/)
 
 ## 4. Auto increase your build number
 Your build number must be:
