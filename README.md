@@ -62,5 +62,7 @@ Here is the format of the build number: YYMMDDBBB
 
 Example: 210606038 = Build 038 at 06 Jun, 2021
 
-
+# References:
+1. [Unity Custom Package](https://docs.unity3d.com/Manual/CustomPackages.html)
+2. [Unity Cloud Build](https://docs.unity3d.com/Manual/UnityCloudBuild.html)
 
