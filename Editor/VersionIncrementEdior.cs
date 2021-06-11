@@ -3,20 +3,20 @@ using UnityEngine;
 using UnityEditor.Build.Reporting;
 
 // 201023001
-public class AutoIncrementVersionCodeInCloudBuild : MonoBehaviour, UnityEditor.Build.IPreprocessBuildWithReport
+public class VersionIncrementEdior : MonoBehaviour, UnityEditor.Build.IPreprocessBuildWithReport
 {
-#if UNITY_CLOUD_BUILD
-    public static void PreExport(UnityEngine.CloudBuild.BuildManifestObject manifest)
-    {
-#if AMAZON_STORE
-        UnityPurchasingEditor.TargetAndroidStore(AndroidStore.AmazonAppStore);
-#endif
-        string buildNumber = manifest.GetValue("buildNumber", "0");
-        increaseBuildVersion(buildNumber);
-    }
-#else
+// #if UNITY_CLOUD_BUILD
+//     public static void PreExport(UnityEngine.CloudBuild.BuildManifestObject manifest)
+//     {
+// #if AMAZON_STORE
+//         UnityPurchasingEditor.TargetAndroidStore(AndroidStore.AmazonAppStore);
+// #endif
+//         string buildNumber = manifest.GetValue("buildNumber", "0");
+//         increaseBuildVersion(buildNumber);
+//     }
+// #else
 
-#endif
+// #endif
 
     public int callbackOrder => 0;
 
@@ -32,7 +32,7 @@ public class AutoIncrementVersionCodeInCloudBuild : MonoBehaviour, UnityEditor.B
 #endif
     }
 
-    private static void increaseBuildVersion(string buildNumber)
+    public static void increaseBuildVersion(string buildNumber)
     {
         System.DateTime dateTime = System.DateTime.Now;
         int yearIn2Number = dateTime.Year % 1000;
