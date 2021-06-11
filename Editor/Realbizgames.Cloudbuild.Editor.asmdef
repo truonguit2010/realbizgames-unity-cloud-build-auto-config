@@ -4,7 +4,8 @@
 		"UnityEngine",
         "UnityEditor",
         "UnityEditor.Build",
-        "UnityEditor.Build.Reporting"
+        "UnityEditor.Build.Reporting",
+        "UnityEngine.CloudBuild"
     ],
     "includePlatforms": [
         "Editor"
