@@ -62,6 +62,32 @@ Here is the format of the build number: YYMMDDBBB
 
 Example: 210606038 = Build 038 at 06 Jun, 2021
 
+## 5. Increase Build Number on Unity Cloud Build
+
+Copy|Create [AutoIncrementVersionCodeInCloudBuild.cs](Samples~/AutoIncrementVersionCodeInCloudBuild.cs) and put it into your Editor Folder.
+  
+```
+using UnityEngine;
+
+public class AutoIncrementVersionCodeInCloudBuild : MonoBehaviour
+{
+    
+    #if UNITY_CLOUD_BUILD
+    public static void PreExport(UnityEngine.CloudBuild.BuildManifestObject manifest)
+    {
+#if AMAZON_STORE
+        UnityPurchasingEditor.TargetAndroidStore(AndroidStore.AmazonAppStore);
+#endif
+        string buildNumber = manifest.GetValue("buildNumber", "0");
+        VersionIncrementEdior.increaseBuildVersion(buildNumber);
+    }
+#endif
+
+}
+```
+
+![Place of the file](Samples~/Place_Of_AutoIncrementVersionCodeInCloudBuild_Guide.png)
+
 # References:
 1. [Unity Custom Package](https://docs.unity3d.com/Manual/CustomPackages.html)
 2. [Unity Cloud Build](https://docs.unity3d.com/Manual/UnityCloudBuild.html)
